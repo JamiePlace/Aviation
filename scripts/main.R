@@ -32,6 +32,8 @@ df <-
   hour_cycle_days('interval') %>% 
   hour_cycle_days('threshold')
 
+write_csv(df,"data/transformed_Structure.csv")
+
 
 # look at the the data
 View(df)

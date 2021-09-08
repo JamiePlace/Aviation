@@ -24,9 +24,9 @@ hour_cycle_days <- function(df, type) {
   df <- 
     df %>% 
     mutate(
-      '{type}_flight_cycles' := str_extract(df %>% select(!!glue('{type}')) %>% pull(), flight_cycle_regex),
-      '{type}_flight_hours' := str_extract(df %>% select(!!glue('{type}')) %>% pull(), flight_hours_regex),
-      '{type}_calendar_days' := str_extract(df %>% select(!!glue('{type}')) %>% pull(), flight_calendar_regex)
+      '{type}_flight_cycles' := str_extract(df %>% select(!!glue('{type}')) %>% pull(), flight_cycle_regex) %>% as.character(),
+      '{type}_flight_hours' := str_extract(df %>% select(!!glue('{type}')) %>% pull(), flight_hours_regex) %>% as.character(),
+      '{type}_calendar_days' := str_extract(df %>% select(!!glue('{type}')) %>% pull(), flight_calendar_regex) %>% as.character()
     ) 
   
   df <-
