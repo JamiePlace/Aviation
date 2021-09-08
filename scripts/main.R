@@ -1,0 +1,37 @@
+# load in external libraries
+# stick to tidyverse for similarities in syntax
+library(dplyr)
+library(stringr)
+library(glue)
+library(readr)
+
+# load in functions
+source('scripts/functions.R')
+
+# define column names
+column_names <- c(
+  'revision',
+  'mpd',
+  'amn',
+  'pgm',
+  'zone',
+  'access',
+  'threshold',
+  'interval',
+  'apl',
+  'eng',
+  'man_hours',
+  'task_description'
+)
+
+# read data
+df <- read_csv('data/Structure.csv', skip = 3, col_names = column_names)
+# manipulate the data
+df <- 
+  df %>% 
+  hour_cycle_days('interval') %>% 
+  hour_cycle_days('threshold')
+
+
+# look at the the data
+View(df)
