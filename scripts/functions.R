@@ -3,7 +3,7 @@
 #' - flight_cycles
 #' - calendar_days
 #' @param df the data
-#' @type the column to maniuplate
+#' @type the column to manipulate
 hour_cycle_days <- function(df, type) {
   # flight cycle section
   # check if fc in cell

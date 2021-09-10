@@ -11,21 +11,21 @@ source('scripts/functions.R')
 # define column names
 column_names <- c(
   'revision',
-  'mpd',
-  'amn',
+  'mpd_task',
+  'amm_task',
   'pgm',
   'zone',
   'access',
   'threshold',
   'interval',
-  'apl',
-  'eng',
+  'applic',
+  'eng_applic',
   'man_hours',
   'task_description'
 )
 
 # read data
-df <- read_csv('data/Structure.csv', skip = 3, col_names = column_names)
+df <- read_csv('data/Structure.csv', skip = 4, col_names = column_names)
 # manipulate the data
 df <- 
   df %>% 
